@@ -1,0 +1,130 @@
+Multichar_Symbols [INF] [PRESENTE] [PASADO] [1PS] [2PS] [3PS] [1PP][2P] [3PP] [SG] [PL]
+
+LEXICON Root
+	Verb;
+	Noun;
+
+LEXICON Verb
+	charrar	VerbInfl1; !To speak
+	baxar VerbInfl1; !To come down
+	debuxar VerbInfl1; !To draw
+	cremar	VerbInfl1; !To burn
+	creyer VerbInfl2; !To believe = Irregular in the first person singular present
+	trayer VerbInfl2; ! To bring = Irregular in the first person singular present
+	saper VerbInfl2; !To know
+	apetexer VerbInfl2; !Feel like 
+	amaneixer VerbInfl2; !To dawn
+	partir VerbInfl3; !To leave
+	aber VerbSpecial; !Auxiliary verb to have = irregular
+	ser VerbSpecial2; !To be = irregular
+
+LEXICON VerbInfl1
+	[INF]:0	#;
+	[PRESENTE]: VerbEnd1;
+	[PASADO]: VerbEnd2;
+LEXICON VerbInfl2
+	[INF]:0	#;
+	[PRESENTE]: VerbEnd3;
+	[PASADO]: VerbEnd4;
+LEXICON VerbInfl3
+	[INF]:0	#;
+	[PRESENTE]: VerbEnd5;
+	[PASADO]: VerbEnd4;
+LEXICON VerbSpecial
+	[INF]:0 #;
+	[PRESENTE]: VerbEndS;
+	[PASADO]: VerbEnd4;
+LEXICON VerbSpecial2
+	[INF]:0 #;
+	[PRESENTE]: VerbEndS2;
+	[PASADO]: VerbEndS3;
+	
+LEXICON VerbEnd1
+	[1PS]:+o #;
+	[2PS]:+as #;
+	[3PS]:+a #;
+	[1PP]:+amos #;
+	[2PP]:+az #;
+	[3PP]:+an #;
+
+LEXICON VerbEnd2
+	[1PS]:+é #;
+	[2PS]:+és #;
+	[3PS]:+ó #;
+	[1PP]:+emos #;
+	[2PP]:+ez #;
+	[3PP]:+oron #;
+
+LEXICON VerbEnd3
+	[1PS]:+o #;
+	[2PS]:+es #;
+	[3PS]:+e #;
+	[1PP]:+emos #;
+	[2PP]:+ez #;
+	[3PP]:+en #;
+	
+LEXICON VerbEnd4
+	[1PS]:+ié #;
+	[2PS]:+iés #;
+	[3PS]:+ió #;
+	[1PP]:+iemos #;
+	[2PP]:+iez #;
+	[3PP]:+ioron #;
+
+LEXICON VerbEnd5
+	[1PS]:+o #;
+	[2PS]:+es #;
+	[3PS]:+e #;
+	[1PP]:+imos #;
+	[2PP]:+iz #;
+	[3PP]:+en #;
+
+LEXICON VerbEndS
+	[1PS]:+he #;
+	[2PS]:+has #;
+	[3PS]:+ha #;
+	[1PP]:+emos #;
+	[2PP]:+ez #;
+	[3PP]:+han #;
+
+LEXICON VerbEndS2
+	[1PS]:+soi #;
+	[2PS]:+ye #;
+	[3PS]:+yes #;
+	[1PP]:+semos #;
+	[2PP]:+soz #;
+	[3PP]:+son #;
+
+LEXICON VerbEndS3
+	[1PS]:+fue #;
+	[2PS]:+fues #;
+	[3PS]:+fue #;
+	[1PP]:+fuemos #;
+	[2PP]:+fuez #;
+	[3PP]:+fueron #;
+
+
+LEXICON Noun
+	flor	NInfl1; !Flower
+	bel	NInfl1; !Some
+	bizino 	NInfl1; !Neighbour
+	voz	NInfl2; !Voice
+	falz 	NInfl2; !Sickle
+	peix	NInfl2; !Fish
+	aragonés NInfl2; !Aragonese
+	espinac NInfl2; !Spinach
+	dolor 	NInfl2; !Pain
+	carnuz 	NInfl3; !Carrion
+	turcaz 	NInfl3; !Typical type of pigeon
+
+LEXICON NInfl1 
+	[SG]:0 #;
+	[PL]:+s #;
+LEXICON NInfl2 
+	[SG]:0 #;
+	[PL]:+es #;
+LEXICON NInfl3 
+	[SG]:0 #;
+	[PL]:+os #;
+	
+	

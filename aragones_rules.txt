@@ -1,0 +1,21 @@
+read lexc aragones.lexc.txt
+def Lexicon;
+
+
+#VERB RULES & CLEAN-UP
+def Ruleremove [{ar}|{er}|{ir}] -> 0 || _{+}; #Erasing the ending of the verbs.
+def CleanUp {+} -> 0;
+def RuleG {y} -> {ig} || _{o}; #Changing the 'y' for'ig' for the first person of singular in present tense of the verb 'creyer' ('creigo').
+def RemoveAber {ab} -> 0 || _{h}|{em}|{ez}; #Erasing the root 'ab' of the verb 'aber' in order to get the forms of present.
+def Y {s} -> 0 || _{y}|{s}|{f}; #Erasing 's' when it is followed by a 'y' or an 's' in order to get the forms of the verb 'to be' ('ye','yes','soi').
+def X {x} -> {xc} || _{o}; #Adding a 'c' for the first person of the present in verb roots ending in -x. 
+def E {e} -> 0 || {x}_; #Erase 'e' after 'x' for the third person of the present in 'apetexer'
+def Cons [ b | d | f | g | h | j | k | l | m | n | p | q | r | s | t | v | w | x | y | z ]; #List of consonants except for 'c' for the next rule.
+def EE {x} -> {xe} || _Cons; #Add an 'e' after 'x' when it is followed by a consonant different than 'c' in order to get the forms of the present of verbs ending in -xer.
+#NOUN RULES
+def Z {z} -> {c} || _{es}; #Changing 'z' into 'c' when it is followed by 'es', such as in 'voz' -> 'voCes'.
+def Acento {és} -> {es} || _{es}; #Erasing the accent of words ending in 'és' when another 'es' is attached to it, such as in 'aragonés' -> 'aragoneses'.
+def Q {ac} -> {qu} || _{e}; #Changing 'c' for 'qu' when it is between an 'a' and an 'e', such as in 'espinac' -> 'espinaques'.
+
+regex Lexicon  .o. Ruleremove  .o. CleanUp .o. RuleG .o. RemoveAber .o. Y .o. X .o. E .o. EE .o. Z .o. Acento .o. Q;
+pairs
